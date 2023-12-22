@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+  <link rel="stylesheet"  type="text/css" href="/main.css" />
+  <title>Selah Hub - Topics</title>
+</head>
+<body>
+  <h1>Selah Hub - Topics</h1>
+  <% if (topics && topics.length > 0) { %>
+    <ul>
+        <% topics.forEach(topic => { %>
+            <li><%= topic.TopicName %> - <%= topic.Description %></li>
+        <% }); %>
+    </ul>
+<% } else { %>
+    <p>No topics available.</p>
+<% } %>
+</body>
+</html>

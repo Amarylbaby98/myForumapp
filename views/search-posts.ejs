@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <title>Search Posts - <%= shopName %></title>
+
+  <link rel="stylesheet" type="text/css" href="/main.css" />
+</head>
+<body>
+
+  <!-- Display the title with the shopName -->
+  
+  <h1>Search Posts <%=shopName%></h1>
+  <% try { %>
+  <!-- Check if there are basicSearchPosts and 
+  if their length is greater than 0 -->
+  <% if (basicSearchPosts && basicSearchPosts.length > 0) { %>
+   <!-- Display a heading for the found posts -->
+     <h2>Found Posts:</h2>
+    <ul> 
+   <!-- Loop through each post in basicSearchPosts -->
+       <% basicSearchPosts.forEach(post => { %>
+  <!-- Display the TopicID and PostContent of each post -->
+         <li><%= post.PostID %>, <%= post.PostContent %></li>
+      <% }); %>
+    </ul>
+  <% } else { %>
+   <!-- If no posts are found, display a message -->
+     <p>No posts found with the provided keyword.</p> 
+    <% } %>
+   <% } catch (e) { console.error(e); } %>  
+  
+
+</body>
+</html>
+

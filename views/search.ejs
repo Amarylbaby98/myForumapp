@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search Posts - <%= shopName %></title>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+</head>
+
+<body>
+    <h1>Search <%=shopName%></h1>
+    <form action="/search-post" method="GET">
+      <p>What are you looking for?</p>
+      <input id="search-box" type="text" name="keyword" value="Default">
+      <input type="submit" value="Search" >
+    </form> 
+</body>
+</html>

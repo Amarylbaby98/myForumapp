@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%=shopName%> Topic Details</title>
+    <link rel="stylesheet"  type="text/css" href="/main.css" />
+  </head>
+  <body>
+    <h1> <%=shopName%> Topic Details</h1>
+   <!-- Display topic details -->
+   <% if (topic) { %>
+    <p>Topic Name: <%= topic.TopicName %></p>
+    <p>Description: <%= topic.Description %></p>
+    <!-- Add other topic details as needed -->
+
+    <!-- Display posts related to the topic -->
+    <% if (posts && posts.length > 0) { %>
+        <h2>Posts:</h2>
+        <ul>
+            <% posts.forEach(post => { %>
+                <li><%= post.PostContent %> - User ID: <%= post.UserID %></li>
+            <% }); %>
+        </ul>
+    <% } else { %>
+        <p>No posts available for this topic.</p>
+    <% } %>
+<% } else { %>
+    <p>Topic not found.</p>
+<% } %>
+  </body>
+</html>

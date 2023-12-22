@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Posts<%=shopName%></title>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+  </head>
+  <body>
+    <!-- Display the title with the shopName -->
+    <h1>Posts <%=shopName%></h1>
+    <% if (posts && posts.length > 0) { %>
+      <ul>
+          <% posts.forEach(post => { %>
+              <li><%= post.PostContent %> - User ID: <%= post.UserID %>, Topic ID: <%= post.TopicID %></li>
+          <% }); %>
+      </ul>
+  <% } else { %>
+      <p>No posts available.</p>
+  <% } %>
+  </body>
+</html>

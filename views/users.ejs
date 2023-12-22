@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+    <title>Users <%= shopName %></title>
+    <link rel="stylesheet"  type="text/css" href="/main.css" />
+</head>
+<body>
+    <h1>Users <%= shopName %></h1>
+    <% if (users && users.length > 0) { %>
+        <ul>
+            <% users.forEach(user => { %>
+                <li><%= user.Username %> - <%= user.Email %></li>
+            <% }); %>
+        </ul>
+    <% } else { %>
+        <p>No users available.</p>
+    <% } %>
+</body>
+</html>

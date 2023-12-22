@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+  <title>Reply to Post- <%= shopName %></title>
+  <link rel="stylesheet" type="text/css" href="/main.css" />
+</head>
+<body>
+
+  <h1>Reply to Post</h1>
+
+  <form method="POST" action="/reply-to-post/<%= post.postId %>">
+    <input type="hidden" name="userID" value="<%= loggedInUserID %>">
+
+    <p>Replying to the following post:</p>
+    <p><strong>User ID:</strong> <%= post.userID %></p>
+    <p><strong>Topic ID:</strong> <%= post.topicID %></p>
+    <p><strong>Post Content:</strong> <%= post.postContent %></p>
+
+    <label for="replyContent">Reply Content:</label>
+    <textarea name="replyContent" rows="4" required></textarea>
+
+    <button type="submit">Reply</button>
+  </form>
+  <a href="/post-details/<%= postId %>">Back to Post Details</a>
+
+</body>
+</html>
